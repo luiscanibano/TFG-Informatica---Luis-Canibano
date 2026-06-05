@@ -151,6 +151,7 @@
     "delete": "Eliminar",
     "deleting": "Eliminando...",
     "deleteAria": "Eliminar {{title}} del historial",
+    "textKind": "Texto",
     "manualSource": "Texto pegado manualmente",
     "extensionSource": "Extensión del navegador",
     "claimsCount": "{{count}} claims",
@@ -165,6 +166,10 @@
     "subtitle": "La extensión reutiliza tu cuenta de FakeNews Insight, respeta tu cuota diaria y permite analizar texto seleccionado o lanzar verificación de claims con un clic.",
     "downloadCta": "Descargar extensión",
     "compatibility": "Compatible con Google Chrome y Microsoft Edge (Manifest V3).",
+    "storeTitle": "Descárgala desde Chrome Web Store",
+    "storeDescription": "Instálala directamente desde la tienda oficial de Chrome y recibe la última versión publicada.",
+    "storeHelper": "Si prefieres la instalación manual en modo desarrollador, puedes seguir usando el tutorial que aparece justo debajo.",
+    "storeCta": "Abrir en Chrome Web Store",
     "howToInstall": "Cómo instalarla",
     "installSubtitle": "Por ahora la extensión se instala manualmente en modo desarrollador.",
     "steps": [

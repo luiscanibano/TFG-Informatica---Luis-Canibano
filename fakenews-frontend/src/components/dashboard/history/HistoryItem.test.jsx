@@ -1,8 +1,9 @@
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 
 import "@/lib/i18n";
+import i18n from "@/lib/i18n";
 import HistoryItem from "./HistoryItem";
 
 const sampleAnalysis = {
@@ -95,5 +96,27 @@ describe("<HistoryItem />", () => {
     );
 
     expect(screen.getByText(/Extensión del navegador/i)).toBeInTheDocument();
+  });
+
+  it("traduce el tipo de ejecución a inglés cuando la interfaz está en inglés", async () => {
+    await act(async () => {
+      await i18n.changeLanguage("en");
+    });
+
+    render(
+      <HistoryItem
+        analysis={{
+          ...sampleAnalysis,
+          runType: "text",
+          kindLabel: null,
+        }}
+      />
+    );
+
+    expect(screen.getByText("Text")).toBeInTheDocument();
+
+    await act(async () => {
+      await i18n.changeLanguage("es");
+    });
   });
 });

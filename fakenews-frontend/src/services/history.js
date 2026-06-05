@@ -184,7 +184,7 @@ const toHistoryItem = (row) => {
     timestampLabel: formatTimestampLabel(row?.saved_at || row?.created_at),
     claimsCount: report.claims.length,
     metaCountLabel: `${report.claims.length} claims`,
-    kindLabel: runType === "url" ? "URL" : "Texto",
+    kindLabel: runType === "url" ? "URL" : null,
     summary: row?.summary || "",
     report,
     savedAt: row?.saved_at || row?.created_at || null,

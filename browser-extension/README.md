@@ -107,4 +107,20 @@ Para que la extensión funcione completa al instalarla en local:
 5. Si Google Cloud te lo exige, ese mismo redirect debe estar permitido en el cliente OAuth de Google.
 6. Debes recargar la extensión tras cualquier cambio en `manifest.json`, `popup/` o `lib/`.
 
+## Distribución
 
+Para publicación en stores, genera primero el paquete de distribución con:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\package-store.ps1
+```
+
+Ese comando crea un ZIP listo para revisión en `browser-extension/dist/` y
+elimina del manifiesto los permisos de backend local usados en desarrollo.
+
+La guía completa para Chrome Web Store y Microsoft Edge Add-ons está en:
+
+- [`../docs/browser-extension-store-publication.md`](../docs/browser-extension-store-publication.md)
+
+Mientras no se publique en store, también puedes distribuir el ZIP manualmente
+vía GitHub Releases.

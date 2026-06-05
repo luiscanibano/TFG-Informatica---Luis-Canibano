@@ -16,6 +16,9 @@ function HistoryItem({ analysis, index = 0, onDelete, onOpenDetails, isDeleting 
     (analysis.inputOrigin === "extension"
       ? t("history.extensionSource")
       : t("history.manualSource"));
+  const resolvedKindLabel =
+    analysis.kindLabel ||
+    (analysis.runType === "csv" ? "CSV" : analysis.runType === "url" ? "URL" : t("history.textKind"));
 
   const handleDelete = async (event) => {
     event.stopPropagation();
@@ -58,7 +61,7 @@ function HistoryItem({ analysis, index = 0, onDelete, onOpenDetails, isDeleting 
               <div className="dash-list-row-meta mt-2">
                 <span>{analysis.timestampLabel}</span>
                 <span>{analysis.metaCountLabel || t("history.claimsCount", { count: analysis.claimsCount ?? 0 })}</span>
-                <span>{analysis.kindLabel || (analysis.runType === "csv" ? "CSV" : analysis.runType === "url" ? "URL" : "Texto")}</span>
+                <span>{resolvedKindLabel}</span>
                 <span>{resolvedSource}</span>
               </div>
             </div>

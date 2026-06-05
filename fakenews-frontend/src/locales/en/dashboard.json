@@ -151,6 +151,7 @@
     "delete": "Delete",
     "deleting": "Deleting...",
     "deleteAria": "Delete {{title}} from history",
+    "textKind": "Text",
     "manualSource": "Pasted text",
     "extensionSource": "Browser extension",
     "claimsCount": "{{count}} claims",
@@ -165,6 +166,10 @@
     "subtitle": "The extension reuses your FakeNews Insight account, respects your daily quota and lets you analyze selected text or launch claim verification with one click.",
     "downloadCta": "Download extension",
     "compatibility": "Compatible with Google Chrome and Microsoft Edge (Manifest V3).",
+    "storeTitle": "Download it from Chrome Web Store",
+    "storeDescription": "Install it directly from Chrome's official store and get the latest version.",
+    "storeHelper": "If you still prefer manual developer-mode installation, you can keep using the tutorial right below.",
+    "storeCta": "Open in Chrome Web Store",
     "howToInstall": "How to install it",
     "installSubtitle": "For now the extension is installed manually in developer mode.",
     "steps": [
