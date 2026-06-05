@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import time
 from html import unescape
 from html.parser import HTMLParser
 from typing import Dict, List, Optional
@@ -103,9 +104,21 @@ def _truncate_text(text: str, max_chars: int) -> str:
 def _read_response_body(response) -> bytes:  # noqa: ANN001
     chunks: List[bytes] = []
     downloaded = 0
+    deadline = time.monotonic() + URL_FETCH_TIMEOUT_SECONDS
 
     while True:
+        if time.monotonic() > deadline:
+            raise UrlContrastFetchError(
+                "La descarga de la URL tardó demasiado."
+            )
+
         chunk = response.read(65536)
+
+        if time.monotonic() > deadline:
+            raise UrlContrastFetchError(
+                "La descarga de la URL tardó demasiado."
+            )
+
         if not chunk:
             break
 
