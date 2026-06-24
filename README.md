@@ -187,9 +187,7 @@ Necesitas configurar en GitHub Actions estos secrets:
 
 ---
 
-## URLs alpha
+## URLs
 
-> _Pendientes de cumplimentar tras el primer despliegue:_
->
-> - Frontend: `https://<proyecto>.pages.dev`
+> - Frontend: `https://fakenewsinsight.com`
 > - Backend:  `https://api.fakenewsinsight.com`
